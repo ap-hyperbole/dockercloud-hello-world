@@ -50,5 +50,8 @@
 		<?php
 	}
 	?>
+	<br>All ENV VARS
+	<?php print_r($_ENV) ?>
+	<br>
 </body>
 </html>
