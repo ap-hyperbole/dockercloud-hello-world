@@ -18,6 +18,7 @@
 <body>
 	<img id="logo" src="logo.png" />
 	<h1><?php echo "Hello ".($_ENV["NAME"]?$_ENV["NAME"]:"world")."!"; ?></h1>
+	<h1>This AMAZING Version is : <?php echo $_ENV["VERSION"]; ?></h1>
 	<?php if($_ENV["HOSTNAME"]) {?><h3>My hostname is <?php echo $_ENV["HOSTNAME"]; ?></h3><?php } ?>
 	<?php
 	$links = [];
@@ -51,7 +52,12 @@
 	}
 	?>
 	<br>All ENV VARS
-	<?php print_r($_ENV) ?>
+	<?php foreach ($_ENV as $key => $value) {
+		?><br>
+		<?php echo "$key => $value";?>
+		<br>
+		<?php
+	} ?>
 	<br>
 </body>
 </html>
